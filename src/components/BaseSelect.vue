@@ -1,5 +1,5 @@
 <template>
-  <label v-if="label">{{ label }}</label>
+  <label :for="uuid" v-if="label">{{ label }}</label>
   <select
       v-bind="{
         ...$attrs,
@@ -9,6 +9,7 @@
       }"
       :value="modelValue"
       class="field"
+      :id="uuid"
   >
     <option
         v-for="option in options"
@@ -22,6 +23,8 @@
 </template>
 
 <script>
+import UniqueID from "@/features/UniqueId";
+
 export default {
   name: "BaseSelect",
   props: {
@@ -37,6 +40,10 @@ export default {
       type: Array,
       required: true
     }
+  },
+  setup(){
+    const uuid = UniqueID();
+    return {uuid}
   }
 }
 </script>

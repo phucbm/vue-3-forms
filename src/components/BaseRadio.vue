@@ -5,11 +5,14 @@
       :value="value"
       @change="$emit('update:modelValue', value)"
       v-bind="$attrs"
+      :id="uuid"
   />
-  <label v-if="label">{{ label }}</label>
+  <label :for="uuid" v-if="label">{{ label }}</label>
 </template>
 
 <script>
+import UniqueID from "@/features/UniqueId";
+
 export default {
   name: "BaseRadio",
   props: {
@@ -25,6 +28,10 @@ export default {
       type: [String, Number],
       required: true
     }
+  },
+  setup(){
+    const uuid = UniqueID();
+    return {uuid}
   }
 }
 </script>
