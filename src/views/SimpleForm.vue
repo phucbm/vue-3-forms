@@ -14,6 +14,7 @@
             v-model="event.title"
             label="Title"
             type="text"
+            error="Oops! There's something wrong."
         />
         <BaseInput
             v-model="event.description"
@@ -120,6 +121,7 @@ export default {
 </script>
 
 <style scoped>
+button {cursor:pointer;}
 fieldset {margin-bottom:30px; border:none; padding:0;}
 legend {font-size:30px; font-weight:700; margin:0 0 10px;}
 </style>
