@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Create an event</h1>
+    <p>Fill in the form, press submit, then open the console log to see response data.</p>
     <form @submit.prevent="sendForm">
 
       <fieldset>
