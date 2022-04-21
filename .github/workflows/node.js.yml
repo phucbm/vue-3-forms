@@ -34,3 +34,8 @@ jobs:
     - name: Build
       run: |
         npm run build
+        
+    - name: Commit changes
+      uses: elstudio/actions-js-build/commit@v4
+      with:
+        commitMessage: deployed by Github Bot
